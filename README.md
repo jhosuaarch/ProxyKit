@@ -18,6 +18,5 @@ $ python main.py
 ```Bash
 python main.py -t socks4 -p 200
 ```
-</br>
-</br>
-Thanks to [proxyscrape](https://proxyscrape.com)
+
+<p>Thanks to </p>[proxyscrape](https://proxyscrape.com)
