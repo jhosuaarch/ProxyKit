@@ -14,7 +14,6 @@ $ python main.py
 - socks5
 - http
 
-```
 ### Usage examples
 ```Bash
 python main.py -t socks4 -p 200
