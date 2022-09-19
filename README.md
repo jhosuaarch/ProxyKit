@@ -10,9 +10,10 @@ $ cd ProxyDownloader
 $ python main.py
 ```
 ### Proxy
-- socks4
-- socks5
-- http
+- [x] http
+- [ ] https
+- [x] socks4
+- [X] socks4
 
 ### Usage examples
 ```Bash
