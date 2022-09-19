@@ -19,4 +19,4 @@ $ python main.py
 python main.py -t socks4 -p 200
 ```
 
-<p>Thanks to </p>[proxyscrape](https://proxyscrape.com)
+<p>Thanks to [proxyscrape](https://proxyscrape.com)</p>
