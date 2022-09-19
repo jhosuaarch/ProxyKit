@@ -8,7 +8,7 @@ $ pip install requests
 $ git clone https://github.com/KZREVOXTICAL/ProxyDownloader
 $ cd ProxyDownloader
 $ python main.py
-
+```
 ### Proxy
 - socks4
 - socks5
