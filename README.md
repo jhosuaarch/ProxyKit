@@ -19,4 +19,5 @@ $ python main.py
 python main.py -t socks4 -p 200
 ```
 
-### Thanks to [proxyscrape](https://proxyscrape.com)
+### Thanks to 
+- [proxyscrape](https://proxyscrape.com)
