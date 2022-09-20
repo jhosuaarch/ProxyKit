@@ -25,6 +25,3 @@ python main.py -p socks4 -t 200
 python main.py -f listproxy -o live.txt
 ```
 
-
-### Thanks to 
-- [proxyscrape](https://proxyscrape.com)
