@@ -15,9 +15,14 @@ $ python main.py
 - [x] socks4
 - [X] socks4
 
-### Usage examples
+### Example of using download proxy
 ```Bash
-python main.py -t socks4 -p 200
+python main.py -p socks4 -t 200
+```
+
+### Example of using download proxy
+```Bash
+python main.py -f listproxy -o live.txt
 ```
 
 
