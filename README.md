@@ -1,4 +1,4 @@
-![gambar](https://raw.githubusercontent.com/KZREVOXTICAL/ProxyDownloader/main/Screenshot%20from%202022-09-19%2022-39-48.png)
+![gambar](https://raw.githubusercontent.com/KZREVOXTICAL/ProxyKit/main/Screenshot%20from%202022-09-20%2022-03-41.png)
 ##
 ### How to install
 ```Bash
