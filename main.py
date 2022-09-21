@@ -4,6 +4,7 @@ import json
 import requests
 import argparse
 from concurrent.futures import ThreadPoolExecutor
+from bs4 import BeautifulSoup as bs
 
 # Color
 G = "\033[1;32m"
@@ -25,11 +26,11 @@ banner = """{} _____                 _____ _ _
 
 URL_BASE = "https://api.proxyscrape.com/v2/?request=proxyinfo&protocol={}&timeout={}&country=all&ssl=all&anonymity=all&simplified=true"
 URL_DOWN = "https://api.proxyscrape.com/v2/?request=getproxies&protocol={}&timeout={}&country=all&ssl=all&anonymity=all&simplified=true"
+URL_SCRAP = "https://www.freeproxy.world/?type=&anonymity=&country=&speed=&port=&page=500"
 
 
 def checkerProxy(listProxy,output):
      try:
-          fo = open(output,mode='a')
           for proxyList in listProxy.splitlines():
                with open(output,mode='a') as f:
                     r = requests.post("https://api.proxyscrape.com/v2/online_check.php",data={"ip_addr[]":[proxyList]})
@@ -48,18 +49,34 @@ def dumpProxy(protocol,out):
      if(r["proxy_count"] != 0 ):
           print("{}[{}!{}] Proxies found as many as {}{}{}".format(W,G,W,G,r["proxy_count"],W))
           raw = requests.get(URL_DOWN.format(protocol,out))
+          ge = requests.get(URL_SCRAP).text
+          sop = bs(ge,'lxml')
+          tab = sop.find('tbody').find_all('tr')
+          proxList = []
+          for x in tab:
+               if x.texts.replace('\n',''):
+                    td = x.find_all('td')
+                    prox = td[0].text.replace('\n','')
+                    port = td[1].text.replace('\n','')
+                    typ = td[5].text.replace('\n','').replace(' ','')
+                    if protocol == typ:
+                         proxList.append(f"{prox}:{port}")
+                    else:
+                         proxList.append(f"{prox}:{port}")
+          proxList.append(raw.text.replace("\n", ""))
           output = input("{}[{}-{}] Save As : ".format(W,G,W))
-          iFile = open(output,'a')
           with open(output,'a') as f:
-               f.write(str(raw.text))
+               for res in proxList:
+                    f.write(f"{res}\n")
 
      else:
           print("{}[{}!{}] Proxy Not Found!".format(W,R,W))
 
-
+def clear_system():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 if __name__ == '__main__':
-     os.system("clear")
+     clear_system()
      print(banner)
      parser = argparse.ArgumentParser(description="ProxyKit")
      parser.add_argument('-p',type=str,help="Proxy Protocols, Exam : http,socks4,socks5")
