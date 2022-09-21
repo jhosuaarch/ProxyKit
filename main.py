@@ -29,9 +29,9 @@ URL_DOWN = "https://api.proxyscrape.com/v2/?request=getproxies&protocol={}&timeo
 
 def checkerProxy(listProxy,output):
      try:
-          fo = open(output,'a')
+          fo = open(output,mode='a')
           for proxyList in listProxy.splitlines():
-               with open(output,'a') as f:
+               with open(output,mode='a') as f:
                     r = requests.post("https://api.proxyscrape.com/v2/online_check.php",data={"ip_addr[]":[proxyList]})
                     data = json.loads(r.text)[0]
                     if(data["working"] == True):
