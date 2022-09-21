@@ -5,7 +5,7 @@
 $ pkg install git
 $ pkg install python
 $ pip install requests
-$ git clone https://github.com/KZREVOXTICAL/ProxyDownloader
+$ git clone https://github.com/KZREVOXTICAL/ProxyKit
 $ cd ProxyDownloader
 $ python main.py
 ```
