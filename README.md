@@ -13,7 +13,7 @@ $ python main.py
 - [x] http
 - [ ] https
 - [x] socks4
-- [X] socks4
+- [X] socks5
 
 ### Example of using download proxy
 ```Bash
