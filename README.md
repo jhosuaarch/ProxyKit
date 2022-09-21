@@ -20,7 +20,7 @@ $ python main.py
 python main.py -p socks4 -t 200
 ```
 
-### Example of using download proxy
+### Example of using checking proxy
 ```Bash
 python main.py -f listproxy -o live.txt
 ```
