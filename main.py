@@ -70,13 +70,13 @@ if __name__ == '__main__':
      args = parser.parse_args()
 
      with ThreadPoolExecutor(max_workers=30) as th:
-          if(args.p != None and args.t != None and args.f == None):
+          if(args.p not None and args.t not None and args.f is None):
                if(args.p in ["http","socks4","socks5"]):
                     th.submit(dumpProxy,args.p,args.t)
                else:
                     print(f"[{R}!{W}] Incorrect Proxy Protocol")
      
-          elif(args.f != None and args.t == None and args.p == None):
+          elif(args.f not None and args.t is None and args.p is None):
                if(args.o != None):
                     try:
                          listProxy = open(args.f).read()
